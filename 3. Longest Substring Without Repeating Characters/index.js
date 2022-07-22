@@ -1,3 +1,4 @@
+// Brute Force
 const lengthOfLongestSubstring = function (s) {
     const n = s.length;
     let res = 0;
