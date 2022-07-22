@@ -1,27 +1,27 @@
-/**
- * @param {string} s
- * @return {number}
- */
-var lengthOfLongestSubstring = function (s) {
-    const count = s.length;
-    let longestSubstring = '';
-    for (let i = 0; i < count; i++) {
-        const curr = s[i];
-        let tempLongestSubstring = '';
-        if (i === 0) {
-            tempLongestSubstring = curr;
-        } else if (i > 0) {
-            if (tempLongestSubstring[i - 1] !== curr) {
-                tempLongestSubstring += curr;
-            } else {
-                if (tempLongestSubstring.length > longestSubstring) {
-                    longestSubstring = tempLongestSubstring;
-                }
-                break;
+const lengthOfLongestSubstring = function (s) {
+    const n = s.length;
+    let res = 0;
+    for (let i = 0; i < n; i++) {
+        for (let j = i; j < n; j++) {
+            if (checkRepetition(s, i, j)) {
+                res = Math.max(res, j - i + 1);
             }
         }
     }
-    return longestSubstring.length;
-};
+    return res;
+}
+
+const checkRepetition = function(s, start, end) {
+    const chars = new Set();
+    for (let i = start; i <= end; i++) {
+        const char = s.charAt(i);
+        const isExist = chars.has(char);
+        if (isExist) {
+            return false;
+        }
+        chars.add(char);
+    }
+    return true;
+}
 
 module.exports = lengthOfLongestSubstring;
