@@ -1,4 +1,10 @@
-const lengthOfLongestSubstring = require('./index');
+// Brute Force
+// const lengthOfLongestSubstring = require('./index1');
+
+// Sliding Window
+const lengthOfLongestSubstring = require('./index2');
+
+
 const s1 = "abcabcbb";
 const o1 = lengthOfLongestSubstring(s1);
 console.log(o1);
