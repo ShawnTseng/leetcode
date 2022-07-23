@@ -2,8 +2,10 @@
 // const lengthOfLongestSubstring = require('./index1');
 
 // Sliding Window
-const lengthOfLongestSubstring = require('./index2');
+// const lengthOfLongestSubstring = require('./index2');
 
+// Sliding Window Optimized
+const lengthOfLongestSubstring = require('./index3');
 
 const s1 = "abcabcbb";
 const o1 = lengthOfLongestSubstring(s1);
